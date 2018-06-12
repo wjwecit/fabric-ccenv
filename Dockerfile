@@ -4,7 +4,7 @@ ADD payload/goshim.tar.bz2 $GOPATH/src/
 RUN mkdir -p /chaincode/input /chaincode/output
 RUN npm config set registry https://registry.npm.taobao.org/
 COPY package.json /chaincode/output/package.json
-RUN cd /chaincode/output
+WORKDIR /chaincode/output
 RUN npm install --product
 RUN rm -f package.json
 LABEL org.hyperledger.fabric.version=1.1.0 \
