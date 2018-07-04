@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "composer-common": "0.19.6",
-    "composer-runtime-hlfv1": "0.19.6"
+    "composer-runtime-hlfv1": "0.19.6",
+    "composer-client": "0.19.6"
   }
 }
