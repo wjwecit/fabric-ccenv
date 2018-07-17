@@ -1,8 +1,11 @@
-FROM ibmblockchain/fabric-baseimage:x86_64-0.4.6
+FROM hyperledger/fabric-baseimage:x86_64-0.4.6
 COPY payload/chaintool payload/protoc-gen-go /usr/local/bin/
 ADD payload/goshim.tar.bz2 $GOPATH/src/
 RUN mkdir -p /chaincode/input /chaincode/output
-RUN npm set registry http://192.168.134.131:4873/
-COPY node_modules /chaincode/output/node_modules
+RUN npm config set registry https://registry.npm.taobao.org/
+COPY package.json /chaincode/output/package.json
+WORKDIR /chaincode/output
+RUN npm install --product
+RUN rm -f package.json
 LABEL org.hyperledger.fabric.version=1.1.0 \
       org.hyperledger.fabric.base.version=0.4.6
