@@ -37,6 +37,9 @@
   "dependencies": {
     "composer-common": "0.19.12",
     "composer-runtime-hlfv1": "0.19.12",
-    "composer-client": "0.19.12"
+    "composer-client": "0.19.12",
+    "fabric-shim": "1.1.2",
+    "jsrsasign": "8.0.3",
+    "request": "2.81.0"
   }
 }
